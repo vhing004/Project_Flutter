@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_flutter/components/screens/home_screen.dart';
 
 class WelcomScreen extends StatelessWidget {
   const WelcomScreen({super.key});
@@ -84,7 +85,14 @@ class WelcomScreen extends StatelessWidget {
                       color: const Color(0xFF674AEF),
                       borderRadius: BorderRadius.circular(10),
                       child: InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => HomeScreen(),
+                            ),
+                          );
+                        },
                         child: Container(
                           padding: const EdgeInsets.symmetric(
                               horizontal: 80, vertical: 15),
