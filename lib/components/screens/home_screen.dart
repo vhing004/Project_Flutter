@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_flutter/components/screens/course_screen.dart';
 
 // ignore: must_be_immutable
 class HomeScreen extends StatelessWidget {
@@ -180,7 +181,13 @@ class HomeScreen extends StatelessWidget {
                   ),
                   itemBuilder: (context, index) {
                     return InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => CourseScreen(imgs[index])),
+                        );
+                      },
                       child: Container(
                         padding: const EdgeInsets.symmetric(
                             horizontal: 10, vertical: 20),
@@ -194,15 +201,15 @@ class HomeScreen extends StatelessWidget {
                               padding: const EdgeInsets.all(10),
                               child: Image.asset(
                                 "images/${imgs[index]}.png",
-                                width: 100,
-                                height: 100,
+                                width: 90,
+                                height: 90,
                               ),
                             ),
                             const SizedBox(height: 10),
                             Text(
                               imgs[index],
                               style: TextStyle(
-                                  fontSize: 22,
+                                  fontSize: 20,
                                   fontWeight: FontWeight.w600,
                                   color: Colors.black.withOpacity(0.6)),
                             ),
@@ -210,7 +217,7 @@ class HomeScreen extends StatelessWidget {
                             Text(
                               "55 Videos",
                               style: TextStyle(
-                                fontSize: 15,
+                                fontSize: 14,
                                 fontWeight: FontWeight.w600,
                                 color: Colors.black.withOpacity(0.5),
                               ),
@@ -229,11 +236,11 @@ class HomeScreen extends StatelessWidget {
 
       // NAVIGATION BOTTOM
       bottomNavigationBar: BottomNavigationBar(
-          selectedFontSize: 17,
+          selectedFontSize: 15,
           showUnselectedLabels: true,
           unselectedItemColor: (Colors.grey),
           selectedItemColor: const Color(0xFF674AEF),
-          iconSize: 32,
+          iconSize: 30,
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
             BottomNavigationBarItem(
